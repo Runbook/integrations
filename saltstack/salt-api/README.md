@@ -9,10 +9,17 @@ In order to utilize these files you must first [setup salt-api](http://bencane.c
 
 Be very cautious of the salt-api reactors that you are implementing, in this set of reactor configurations we include 3 reactors that could be considered dangerous `reactor/init.sls`, `reactor/cmd/run.sls`, & `reactor/cmd/script.sls`. If a malicious user was able to bypass your salt-api security measurements these reactions would allow that user to execute abritrary and potentially harmful commands across your infrastructure. The use of these reactor configurations are at your own risk, and you are responsible for securing these configurations.
 
+## salt-api.conf
+
+The `salt-api.conf` file is designed to be placed into the `/etc/salt/master.d` directory. This file contains basic configurations for the `salt-api` service. This file should be edited for your environment as paths and IP's may be different.
+
+Once you put this file into `/etc/salt/master.d` directory you must restart the `salt-master` and `salt-api` services.
 
 ## Reactor.conf
 
-The `reactor.conf` file is designed to be placed into the `/etc/salt/master.d` directory. Once this file is in place you will need to restart the `salt-master` service for these reactions to take effect.
+The `reactor.conf` file is designed to be placed into the `/etc/salt/master.d` directory. This file contains all of the CloudRoutes based reactor configurations and sample url even tags to listen for. You may need to modify this file for your environment.
+
+Once this file is in place you will need to restart the `salt-master` service for these reactions to take effect.
 
 ## reactor/
 
