@@ -1,0 +1,32 @@
+monitors:
+  Tester:
+    url: https://dash.cloudrout.es/api/cr-api/df2e25c9-example-monitor-1-f986166c7578
+    check_key: example_check_key
+    cmd: /var/tmp/randomfail.sh
+    args: monitor1
+    reactions:
+      run_healthy:
+        trigger: 2
+        callon: healthy
+        cmd: /var/tmp/sample.sh
+        args: reaction
+      run_failed:
+        trigger: 2
+        callon: failed
+        cmd: /var/tmp/sample.sh
+        args: reaction
+  Tester2:
+    url: https://dash.cloudrout.es/api/cr-api/df2e25c9-example-monitor-2-f986166c7578
+    check_key: example_check_key
+    cmd: /var/tmp/randomfail.sh
+    reactions:
+      run_healthy:
+        trigger: 2
+        callon: healthy
+        cmd: /var/tmp/sample.sh
+        args: reaction
+      run_failed:
+        trigger: 0
+        callon: failed
+        cmd: /var/tmp/sample.sh
+        args: reaction

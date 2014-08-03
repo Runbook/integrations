@@ -1,0 +1,10 @@
+monitors:
+  Tester:
+    url: https://dash.cloudrout.es/api/cr-api/df2e25c9-example-monitor-1-f986166c7578
+    check_key: example_check_key
+    cmd: /var/tmp/randomfail.sh
+    args: monitor1
+  Tester2:
+    url: https://dash.cloudrout.es/api/cr-api/df2e25c9-example-monitor-2-f986166c7578
+    check_key: example_check_key
+    cmd: /var/tmp/randomfail.sh
